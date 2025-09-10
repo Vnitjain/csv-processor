@@ -11,6 +11,7 @@ import {
 import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { CsvDataTable } from './components/CsvDataTable';
 
 export default function App() {
   const [csvText, setCsvText] = React.useState<string>("");
@@ -60,7 +61,7 @@ export default function App() {
         </Appbar.Header>
 
         <View style={styles.container}>
-          {csvText ? <Text>{csvText}</Text> : <Text>Please select a file</Text>
+          {csvText ? <CsvDataTable csv={csvText} /> : <Text>Please select a file</Text>
 
           }
           <FAB
